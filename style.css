@@ -1,0 +1,45 @@
+:root{
+    --color-principal: rgb(81, 255, 0);
+    --color-secundario: rgba(232, 252, 255, 0.685);
+    --color-terciario: rgb(233, 189, 123);
+    --color-fondo: white;
+    --color-borde: rgba(53, 53, 53, 0.726);
+}
+.hide{
+display: none;
+}
+body{
+    margin: 0%;
+    padding: 0%;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    background-color:var(--color-secundario);
+    height: 100vh;
+    margin: 0%;
+}
+.registrtation{
+    width: 65%;
+    background-color: var(--color-fondo);
+    margin: 5% 2.5% 5% 5%;
+}
+.playingRecord{
+    width: 20%;
+    background-color:  var(--color-fondo);
+    margin: 5% 5% 5% 2.5%;
+}
+.UserRgistration{
+    display: grid;
+    height: 25%;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30%;
+    justify-items: center;
+    align-content: space-evenly;
+    box-shadow:  5px 5px 25px #222 ;
+    border: 2px solid var(--color-borde);
+    border-radius: 4px;
+}
