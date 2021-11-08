@@ -1,17 +1,41 @@
 
+const HISTORIC=[];
+var newUser;
+var name = "";
+var inputValue = document.getElementById("inputStart");
+var btnStart = document.getElementById("btnStart");
+btnStart.addEventListener("click" ,userName);
 
+function userName(score=0){
+    name = inputValue.value;
+    
+    newUser= {
+         name: name,
+         score: score
+    }
 
-
-var player={
-    userName: "",
-    Scored: 0
+    HISTORIC.push(newUser)
+    console.log(inputValue)
+    console.log(newUser)
+    console.log(name)
+    console.log(HISTORIC)
 }
 
 
 
-function player({userName ="Default Player", Scored})
+// localStorage.setItem()
 
-console.log("asd")
+
+// var player={
+//     userName: "",
+//     Scored: 0
+// }
+
+
+
+// function player({userName ="Default Player", Scored})
+
+// console.log("asd")
 
 
 
@@ -40,3 +64,5 @@ console.log("asd")
 //       document.getElementById("countdown").innerHTML = "EXPIRED";
 //     }
 //   }, 1000);
+
+
