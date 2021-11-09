@@ -1,26 +1,62 @@
-
 const HISTORIC=[];
 var newUser;
-var name = "";
 var inputValue = document.getElementById("inputStart");
-var btnStart = document.getElementById("btnStart");
+var divRegiter = document.getElementById("UserGestrtaion")
+var divStar = document.getElementById("divStar")
+var divWin =   document.getElementById("btnWin")
+var beginingTime;
+
+var btnStart = document.getElementById("btnRegister");
+var btnStar = document.getElementById("btnStar");
+var btnFinish = document.getElementById("btnFinish");
+
+divWin.addEventListener("click",positionDiv)
 btnStart.addEventListener("click" ,userName);
+btnStar.addEventListener("click" ,startGame);
+btnFinish.addEventListener("click", finish)
 
 function userName(score=0){
-    name = inputValue.value;
-    
+    var name = inputValue.value;
     newUser= {
-         name: name,
-         score: score
+        name: name,
+        score: score
     }
-
-    HISTORIC.push(newUser)
-    console.log(inputValue)
-    console.log(newUser)
-    console.log(name)
-    console.log(HISTORIC)
+if(inputValue.value=="")
+{}
+else{
+    HISTORIC.push(newUser);
+    localStorage.setItem("players",JSON.stringify(HISTORIC));
+    var player = JSON.parse(localStorage.getItem("players"));
+    divRegiter.className="hide";
+    history();
+    }
 }
 
+function startGame(){
+    beginingTime = Date.now();
+    console.log(beginingTime);
+    divStar.className="hide";
+}
+
+function history (){
+    // console.log(HISTORIC[0])
+    var totalhistory = document.getElementById("history");
+    totalhistory.textContent=HISTORIC.toString();
+}
+
+function finish(){
+    var finalTime = Date.now();   
+    var gameTime = finalTime-beginingTime
+}
+
+function positionDiv() {
+    let positionRight = Math.random
+    let positiontop = Math.random
+    let coords =  divWin.getBoundingClientRect()
+    let divMove = divWin.style.right = positionRight;
+     divMove = divWin.style.top = positiontop;
+    console.log(coords)
+}
 
 
 // localStorage.setItem()

@@ -43,3 +43,10 @@ main{
     border: 2px solid var(--color-borde);
     border-radius: 4px;
 }
+
+.bTnWin{
+    height: 30px;
+    width: 30px;
+    background-color: black;
+    position: absolute;
+}
