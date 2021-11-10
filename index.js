@@ -32,32 +32,32 @@ btnRestar.addEventListener("click",restart)
 function userName(){
     var name = inputValue.value;
     HISTORIC=[];
-    var newUser= {
-        name: name,
-        score: 0
-    }
-if(inputValue.value=="")
-{}
-else{
-    var duplicated =false;
-    if(localStorage.getItem("players")!=null){
-        HISTORIC=(JSON.parse(localStorage.getItem("players")));
-        for(let i=0;i<HISTORIC.length;i++){
-            if(HISTORIC[i].name==newUser.name){
-                return;
+    createUser(name);
+    if(inputValue.value=="")
+    {}
+    else{
+        var duplicated =false;
+        if(localStorage.getItem("players")!=null){
+            HISTORIC=(JSON.parse(localStorage.getItem("players")));
+            for(let i=0;i<HISTORIC.length;i++){
+                if(HISTORIC[i].name==newUser.name){
+                    return;
+                }
             }
         }
-    }
-    HISTORIC.push(newUser);
-    localStorage.setItem("players",JSON.stringify(HISTORIC));
-    divRegister.className="hide";
-    divStart.className="UserRegistration";
-    divRegister.className="hide";
-    divHistory.innerHTML="";
-    history();
+        divRegister.className="hide";
+        divStart.className="UserRegistration";
+        divRegister.className="hide";
+    // divHistory.innerHTML="";
+    // history();
+        }
+}
+function createUser(name="defaultPlayer", score=0){
+    return newUser= {
+        name: name,
+        score: score
     }
 }
-
 function history (){
     HISTORIC.forEach(i => {
         createListElement({username:i.name, score:i.score});
@@ -89,6 +89,13 @@ function finishGame(){
     divWin.className="hide";
     divRestart.className="UserRegistration";
     gameTime = (finishTime-beginingTime)/1000
+    //asignar score con gametime
+
+    newUser=createUser(newUser.name,gameTime);
+    HISTORIC.push(newUser);
+    localStorage.setItem("players",JSON.stringify(HISTORIC));
+    divHistory.innerHTML="";
+    history();
     divResult.innerHTML = gameTime ;
 }
 
