@@ -11,21 +11,27 @@
 <body>
     <main>
         <div class="registrtation" id="registrtation">
-            <div class="UserRgistration" id="UserGestrtaion" >
+            <div class="UserRegistration" id="UserRegistration" >
                 <label for="uname">Username</label>
-                <input type="text" id="inputStart"placeholder="Enter Username" name="uname" required>
-                <button type="" id="btnRegister">Register</button>
+                <input type="text" id="inputRegister"placeholder="Enter Username" name="uname" required>
+                <button type="" id="btnRegister" class="btn">Register</button>
             </div>
-            <div class="divStar" id="divStar">
-                <button id="btnStar">Start</button>
+            <div class="hide" id="divStart">
+                <button id="btnStart" class="btn">Start</button>
             </div>
-            <div class="bTnWin" id="btnWin"></div>
+            <div class="hide" id="btnWin">
+                <!-- boton juego -->
+            </div>
+            <div class="hide" id="divRestart">
+                <p>Congratulation your Time is:</p>
+                <div class="divResult" id="result"> seconds</div>
+                <button id="restart" class="btn">Restart</button>
+            </div>
             <!-- <button type="" id="btnStart">Start</button> -->
         </div>
         <div class="playingRecord">
             <div id="history"></div>
         </div>
-        <button id="btnFinish">Finish</button>
     </main>
 </body>
 </html>
