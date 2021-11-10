@@ -1,11 +1,9 @@
-
-   let HISTORIC=[];
-var divRegiter = document.getElementById("UserGestrtaion");
-var divStar = document.getElementById("divStar");
-var divWin =   document.getElementById("btnWin");
+const HISTORIC=[];
+var newUser;
 var inputValue = document.getElementById("inputStart");
-var divTable = document.getElementById("registration");
-
+var divRegiter = document.getElementById("UserGestrtaion")
+var divStar = document.getElementById("divStar")
+var divWin =   document.getElementById("btnWin")
 var beginingTime;
 
 var btnStart = document.getElementById("btnRegister");
@@ -15,7 +13,7 @@ var btnFinish = document.getElementById("btnFinish");
 divWin.addEventListener("click",positionDiv)
 btnStart.addEventListener("click" ,userName);
 btnStar.addEventListener("click" ,startGame);
-btnFinish.addEventListener("click", finish);
+btnFinish.addEventListener("click", finish)
 
 function userName(score=0){
     var name = inputValue.value;
@@ -36,8 +34,28 @@ else{
 
 function startGame(){
     beginingTime = Date.now();
-   /// console.log(beginingTime);
+    console.log(beginingTime);
     divStar.className="hide";
+}
+
+function history (){
+    // console.log(HISTORIC[0])
+    var totalhistory = document.getElementById("history");
+    totalhistory.textContent=HISTORIC.toString();
+}
+
+function finish(){
+    var finalTime = Date.now();   
+    var gameTime = finalTime-beginingTime
+}
+
+function positionDiv() {
+    let positionRight = Math.random
+    let positiontop = Math.random
+    let coords =  divWin.getBoundingClientRect()
+    let divMove = divWin.style.right = positionRight;
+     divMove = divWin.style.top = positiontop;
+    console.log(coords)
 }
 
 function history (){
@@ -58,7 +76,7 @@ function positionDiv() {
     //let positionLeft = 25;
     //let positiontop = 25*0.65;
    
-    let coords =  divTable.getBoundingClientRect()
+    //let coords =  divTable.getBoundingClientRect()
     divWin.style.left = positionLeft+"%";
     divWin.style.top = positionTop+"%";
   // divWin.setAttribute("style", "top:"+5*10+";left:"+positionLeft+";");

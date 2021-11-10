@@ -21,7 +21,7 @@ main{
     height: 100vh;
     margin: 0px;
 }
-.registration{
+.registrtation{
    /*  overflow: scroll; */
    position:relative;
     width: 65%;
@@ -46,17 +46,10 @@ main{
     border: 2px solid var(--color-borde);
     border-radius: 4px;
 }
-td{
-    width:50px;
-    background-color: red;
-}
+
 .bTnWin{
     height: 30px;
     width: 30px;
-  
-    /* top:15vh; */
-    /* left:100px; */
     background-color: black;
     position: absolute;
-  
 }
