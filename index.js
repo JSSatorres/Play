@@ -41,8 +41,14 @@ console.log(newUser)
 if(inputValue.value=="")
 {}
 else{
+    var duplicated =false;
     if(localStorage.getItem("players")!=null){
-    HISTORIC=(JSON.parse(localStorage.getItem("players")));
+        HISTORIC=(JSON.parse(localStorage.getItem("players")));
+        for(let i=0;i<HISTORIC.length;i++){
+            if(HISTORIC[i].name==newUser.name){
+                return;
+            }
+        }
     }
     HISTORIC.push(newUser);
     localStorage.setItem("players",JSON.stringify(HISTORIC));
