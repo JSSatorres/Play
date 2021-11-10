@@ -31,11 +31,13 @@ btnRestar.addEventListener("click",restart)
 
 function userName(){
     var name = inputValue.value;
+    var score = gameTime;
     HISTORIC=[];
     var newUser= {
         name: name,
-        score: 0
+        score: score
     }
+console.log(newUser)
 if(inputValue.value=="")
 {}
 else{

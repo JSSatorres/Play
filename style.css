@@ -84,3 +84,7 @@ main{
     background-color: #0013ba;
     color:white;
 }
+li{
+    list-style: none;
+    padding: 3px;
+}
