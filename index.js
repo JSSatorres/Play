@@ -40,32 +40,27 @@ if(inputValue.value=="")
 {}
 else{
     if(localStorage.getItem("players")!=null){
-    HISTORIC.push(JSON.parse(localStorage.getItem("players")));
+    HISTORIC=(JSON.parse(localStorage.getItem("players")));
     }
     HISTORIC.push(newUser);
-    console.log(HISTORIC);
     localStorage.setItem("players",JSON.stringify(HISTORIC));
-   // var player = JSON.parse(localStorage.getItem("players"));
     divRegister.className="hide";
     divStart.className="UserRegistration";
     divRegister.className="hide";
+    divHistory.innerHTML="";
     history();
     }
 }
 
 function history (){
-    //var totalhistory = document.getElementById("history");
-   // var totalhistory = document.getElementById("history");
-    //const list=document.createElement("li");
     HISTORIC.forEach(i => {
         createListElement({username:i.name, score:i.score});
-     });
-     divHistory.textContent=HISTORIC;
+    });
 }
 
 function createListElement({ username, score }) {
     const newListItem = document.createElement("li");
-    newListItem.innerText = "User: " + username + "\nScore: " + score;
+    newListItem.innerText = username + ":" + score+" seconds";
     divHistory.appendChild(newListItem);
 }
 
@@ -80,12 +75,12 @@ function startGame(){
 function positionDiv() {
         let positionRight = Math.floor( Math.random()*90)
         let positionTop =  Math.floor( Math.random()*90)
-        let divMove = divWin.style.right = positionRight + "%";
-         divMove = divWin.style.top = positionTop + "%";
+            divWin.style.right = positionRight + "%";
+            divWin.style.top = positionTop + "%";
 }
 
 function finishGame(){
-    finishTime = Date.now();   
+    finishTime = Date.now();
     gameTime = (finishTime-beginingTime)/1000
     console.log(gameTime)
     divRestart.className="UserRegistration";
