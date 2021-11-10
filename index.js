@@ -22,7 +22,7 @@ var beginingTime;
 divWin.addEventListener("click",finishGame)
 var divRestart = document.getElementById("divRestart");
 var finishTime;
-var gameTime= 000;
+var gameTime;
 
 //----- Restart Game
 var divResult = document.getElementById("result")
@@ -72,7 +72,6 @@ function createListElement({ username, score }) {
 
 function startGame(){
     beginingTime = Date.now();
-    console.log(beginingTime);
     divStart.className="hide";
     positionDiv();
     divWin.className ="bTnWin";
@@ -87,53 +86,36 @@ function positionDiv() {
 
 function finishGame(){
     finishTime = Date.now();
-    gameTime = (finishTime-beginingTime)/1000
-    console.log(gameTime)
-    divRestart.className="UserRegistration";
     divWin.className="hide";
-}
-
-function finish(){
-    var finalTime = Date.now();
-    var gameTime = finalTime-beginingTime
-}
-
-function positionDiv() {
-    let positionLeft = Math.floor(Math.random()*90);
-    let positionTop = Math.floor(Math.random()*90);
-    divWin.style.left = positionLeft+"%";
-    divWin.style.top = positionTop+"%";
+    divRestart.className="UserRegistration";
+    gameTime = (finishTime-beginingTime)/1000
+    divResult.innerHTML = gameTime ;
 }
 
 function restart(){
     divRestart.className="hide";
     divRegister.className="UserRegistration";
-    divResult.innerHTML = gameTime ;
 }
 
 
 
-// function history (){
-//     // console.log(HISTORIC[0])
-//     var totalhistory = document.getElementById("history");
-//     totalhistory.textContent=HISTORIC.toString();
-// }
 
-// function finish(){
-//     var finalTime = Date.now();
-//     var gameTime = finalTime-beginingTime
-// }
 
-// function positionDiv() {
-//     let positionLeft = Math.floor(Math.random()*90);
-//     console.log(positionLeft);
-//     let positionTop = Math.floor(Math.random()*90);
-//     //let positionLeft = 25;
-//     //let positiontop = 25*0.65;
-   
-//     //let coords =  divTable.getBoundingClientRect()
-//     divWin.style.left = positionLeft+"%";
-//     divWin.style.top = positionTop+"%";
-//   // divWin.setAttribute("style", "top:"+5*10+";left:"+positionLeft+";");
-//     console.log(coords)
-// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
