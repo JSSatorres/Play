@@ -1,6 +1,7 @@
 :root{
     --color-principal: rgb(81, 255, 0);
-    --color-secundario: rgba(232, 252, 255, 0.685);
+   /*  --color-secundario: rgba(232, 252, 255, 0.685); */
+    --color-secundario: grey;
     --color-terciario: rgb(233, 189, 123);
     --color-fondo: white;
     --color-borde: rgba(53, 53, 53, 0.726);
@@ -18,9 +19,11 @@ main{
     flex-wrap: wrap;
     background-color:var(--color-secundario);
     height: 100vh;
-    margin: 0%;
+    margin: 0px;
 }
-.registrtation{
+.registration{
+   /*  overflow: scroll; */
+   position:relative;
     width: 65%;
     background-color: var(--color-fondo);
     margin: 5% 2.5% 5% 5%;
@@ -42,4 +45,18 @@ main{
     box-shadow:  5px 5px 25px #222 ;
     border: 2px solid var(--color-borde);
     border-radius: 4px;
+}
+td{
+    width:50px;
+    background-color: red;
+}
+.bTnWin{
+    height: 30px;
+    width: 30px;
+  
+    /* top:15vh; */
+    /* left:100px; */
+    background-color: black;
+    position: absolute;
+  
 }
