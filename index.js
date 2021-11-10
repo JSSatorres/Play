@@ -1,5 +1,5 @@
-const HISTORIC=[];
 var newUser;
+let HISTORIC=[];
 
 //--------- Register step-----------
 var divRegister = document.getElementById("UserRegistration")
@@ -14,6 +14,8 @@ btnStart.addEventListener("click" ,startGame);
 
 //--------- Game start step-----------
 var divWin =  document.getElementById("btnWin")
+var divTable = document.getElementById("registration");
+var divHistory=document.getElementById("history");
 var beginingTime;
 
 // ----- Finish Game
@@ -27,27 +29,44 @@ var divResult = document.getElementById("result")
 var btnRestar =document.getElementById("restart")
 btnRestar.addEventListener("click",restart)
 
-function userName(score=0){
+function userName(){
     var name = inputValue.value;
-    newUser= {
+    HISTORIC=[];
+    var newUser= {
         name: name,
-        score: score
+        score: 0
     }
 if(inputValue.value=="")
 {}
 else{
+    if(localStorage.getItem("players")!=null){
+    HISTORIC.push(JSON.parse(localStorage.getItem("players")));
+    }
     HISTORIC.push(newUser);
+    console.log(HISTORIC);
     localStorage.setItem("players",JSON.stringify(HISTORIC));
-    var player = JSON.parse(localStorage.getItem("players"));
+   // var player = JSON.parse(localStorage.getItem("players"));
     divRegister.className="hide";
     divStart.className="UserRegistration";
+    divRegister.className="hide";
     history();
     }
 }
 
 function history (){
-    var totalhistory = document.getElementById("history");
-    totalhistory.textContent=HISTORIC.toString();
+    //var totalhistory = document.getElementById("history");
+   // var totalhistory = document.getElementById("history");
+    //const list=document.createElement("li");
+    HISTORIC.forEach(i => {
+        createListElement({username:i.name, score:i.score});
+     });
+     divHistory.textContent=HISTORIC;
+}
+
+function createListElement({ username, score }) {
+    const newListItem = document.createElement("li");
+    newListItem.innerText = "User: " + username + "\nScore: " + score;
+    divHistory.appendChild(newListItem);
 }
 
 function startGame(){
@@ -61,10 +80,8 @@ function startGame(){
 function positionDiv() {
         let positionRight = Math.floor( Math.random()*90)
         let positionTop =  Math.floor( Math.random()*90)
-        let coords =  divWin.getBoundingClientRect()
         let divMove = divWin.style.right = positionRight + "%";
          divMove = divWin.style.top = positionTop + "%";
-        console.log(coords)
 }
 
 function finishGame(){
@@ -75,12 +92,22 @@ function finishGame(){
     divWin.className="hide";
 }
 
+function finish(){
+    var finalTime = Date.now();
+    var gameTime = finalTime-beginingTime
+}
+
+function positionDiv() {
+    let positionLeft = Math.floor(Math.random()*90);
+    let positionTop = Math.floor(Math.random()*90);
+    divWin.style.left = positionLeft+"%";
+    divWin.style.top = positionTop+"%";
+}
+
 function restart(){
     divRestart.className="hide";
     divRegister.className="UserRegistration";
     divResult.innerHTML = gameTime ;
-
-    
 }
 
 
