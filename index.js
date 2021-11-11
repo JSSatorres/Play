@@ -35,22 +35,6 @@ function userName(){
     var name = inputValue.value;
     var score = gameTime;
     HISTORIC=[];
-<<<<<<< HEAD
-    var newUser= {
-        name: name,
-        score: score
-    }
-console.log(newUser)
-if(inputValue.value=="")
-{}
-else{
-    var duplicated =false;
-    if(localStorage.getItem("players")!=null){
-        HISTORIC=(JSON.parse(localStorage.getItem("players")));
-        for(let i=0;i<HISTORIC.length;i++){
-            if(HISTORIC[i].name==newUser.name){
-                return;
-=======
     createUser(name);
     if(inputValue.value=="")
     {}
@@ -62,7 +46,6 @@ else{
                 if(HISTORIC[i].name==newUser.name){
                     return;
                 }
->>>>>>> 09c7e2c557632f8570b1c510fac52906e9d2a778
             }
         }
         divRegister.className="hide";

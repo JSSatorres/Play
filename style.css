@@ -90,11 +90,10 @@ main{
     background-color: #0013ba;
     color:white;
 }
-<<<<<<< HEAD
 li{
     list-style: none;
     padding: 3px;
-=======
+}
 .divPauseShow{
     width:50%;
     height: 50%;
@@ -102,5 +101,4 @@ li{
 #divPause img{
     width:25%;
     height: 25%;
->>>>>>> 09c7e2c557632f8570b1c510fac52906e9d2a778
 }
