@@ -25,6 +25,10 @@ main{
    /*  overflow: scroll; */
    position:relative;
     width: 65%;
+     background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(assets/table-fruit.jpg);
+
     background-color: var(--color-fondo);
     margin: 5% 2.5% 5% 5%;
 }
@@ -58,8 +62,10 @@ main{
 .bTnWin{
     height: 30px;
     width: 30px;
-    background-color: black;
+    background-image: url(https://technabob.com/blog/wp-content/uploads/2011/12/fruit-ninja-plush-toys-from-halfbrick-2.jpg);
     position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .btn {
@@ -83,4 +89,12 @@ main{
 .btn:hover {
     background-color: #0013ba;
     color:white;
+}
+.divPauseShow{
+    width:50%;
+    height: 50%;
+}
+#divPause img{
+    width:25%;
+    height: 25%;
 }

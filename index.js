@@ -10,8 +10,10 @@ var inputValue = document.getElementById("inputRegister");
 //--------- Start step-----------
 var divStart = document.getElementById("divStart")
 var btnStart = document.getElementById("btnStart");
-btnStart.addEventListener("click" ,startGame);
+btnStart.addEventListener("click" ,pauseGame);
 
+//--------- Game pause time-----------
+var divPause= document.getElementById("divPause");
 //--------- Game start step-----------
 var divWin =  document.getElementById("btnWin")
 var divTable = document.getElementById("registration");
@@ -69,12 +71,18 @@ function createListElement({ username, score }) {
     newListItem.innerText = username + ":" + score+" seconds";
     divHistory.appendChild(newListItem);
 }
-
+function pauseGame(){
+    var random= (Math.floor( Math.random()*4000)+2000);
+    divStart.className="hide";
+    divPause.className="divPauseShow";
+    myVar = setTimeout(function(){ startGame(); }, random);
+   //myVar= setInterval(function(){ startGame();console.log("timing"); }, random);
+}
 function startGame(){
     beginingTime = Date.now();
-    divStart.className="hide";
-    positionDiv();
     divWin.className ="bTnWin";
+    divPause.className="hide";
+    positionDiv()
 }
 
 function positionDiv() {
