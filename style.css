@@ -16,7 +16,6 @@ body{
     margin: 0%;
     padding: 0%;
 }
-
 main{
     display: flex;
     flex-wrap: wrap;
@@ -25,13 +24,11 @@ main{
     margin: 0px;
 }
 .registrtation{
-   /*  overflow: scroll; */
-   position:relative;
+    position:relative;
     width: 65%;
-     background-size: cover;
+    background-size: cover;
     background-repeat: no-repeat;
     background-image: url(assets/table-fruit.jpg);
-
     background-color: var(--color-fondo);
     margin: 5% 2.5% 5% 5%;
 }
@@ -39,7 +36,7 @@ main{
     width: 20%;
     background-size: cover;
     background-repeat: no-repeat;
-  background-image: url(https://i.ytimg.com/vi/S5IZCmW2M2o/maxresdefault.jpg);
+    background-image: url(https://i.ytimg.com/vi/S5IZCmW2M2o/maxresdefault.jpg);
     margin: 5% 5% 5% 2.5%;
 }
 li{
@@ -66,15 +63,12 @@ li{
     color: white;
     font-size: 20px;
 }
-
 .divResult{
     height: 50px;
     width: 100px;
     color: white;
     font-size: 30px;
-
 }
-
 .bTnWin{
     height: 30px;
     width: 30px;
@@ -83,7 +77,6 @@ li{
     background-size: cover;
     background-repeat: no-repeat;
 }
-
 .btn {
     color: #0099CC;
     background-color:rgb(139, 67, 7);
@@ -121,7 +114,6 @@ li{
     margin-top: auto;
     margin-bottom: auto;
     align-items: center;
-   
 }
 #divPause img{
     height: 70%;

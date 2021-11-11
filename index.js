@@ -72,6 +72,7 @@ function createListElement({ username, score }) {
     newListItem.innerText = username + "\n" + score;
     divHistory.appendChild(newListItem);
 }
+
 function pauseGame(){
     var random= (Math.floor( Math.random()*4000)+2000);
     divStart.className="hide";
@@ -98,8 +99,6 @@ function finishGame(){
     divWin.className="hide";
     divRestart.className="UserRegistration";
     gameTime = (finishTime-beginingTime)/1000
-    //asignar score con gametime
-
     newUser=createUser(newUser.name,gameTime);
     HISTORIC.push(newUser);
     localStorage.setItem("players",JSON.stringify(HISTORIC));
