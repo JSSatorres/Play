@@ -68,7 +68,7 @@ function history (){
 
 function createListElement({ username, score }) {
     const newListItem = document.createElement("li");
-    newListItem.innerText = username + ":" + score+" seconds";
+    newListItem.innerText = username + "\n" + score;
     divHistory.appendChild(newListItem);
 }
 function pauseGame(){
