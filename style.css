@@ -121,3 +121,6 @@ li{
     margin-left: 10%;
     border-radius: 30%;
 }
+.visible{
+    display: inline;
+}
