@@ -1,10 +1,10 @@
 :root{
     --color-principal: rgb(81, 255, 0);
    /*  --color-secundario: rgba(232, 252, 255, 0.685); */
-    --color-secundario: #69c7e67e;
+    --color-secundario: rgb(31, 17, 6);
     --color-terciario: rgb(233, 189, 123);
-    --color-fondo: white;
-    --color-borde: #0099CC;
+    --color-fondo: rgba(221, 180, 45, 0.637);
+    --color-borde: rgb(139, 67, 7);
 }
 .hide{
 display: none;
@@ -49,14 +49,17 @@ main{
     box-shadow:  5px 5px 25px #222 ;
     border: 2px solid var(--color-borde);
     border-radius: 4px;
+    background-color: var(--color-fondo);
+    color: white;
+    font-size: 20px;
 }
 
 .divResult{
     height: 50px;
     width: 100px;
-    color: black;
-    font-size: 20px;
-    
+    color: white;
+    font-size: 30px;
+
 }
 
 .bTnWin{
@@ -70,7 +73,7 @@ main{
 
 .btn {
     color: #0099CC;
-    background-color:#0099CC;
+    background-color:rgb(139, 67, 7);
     border: 4px solid #1a0ce0;
     border-radius: 8px;
     border: none;
@@ -87,7 +90,7 @@ main{
     text-transform: uppercase;
 }
 .btn:hover {
-    background-color: #0013ba;
+    background-color: rgb(54, 28, 6);
     color:white;
 }
 li{
@@ -95,10 +98,21 @@ li{
     padding: 3px;
 }
 .divPauseShow{
-    width:50%;
-    height: 50%;
+    height: 100%;
+    display: flex;
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    align-items: center;
+   
 }
 #divPause img{
-    width:25%;
-    height: 25%;
+    height: 70%;
+    width: 50%;
+    margin-left: 10%;
+    border-radius: 30%;
 }
