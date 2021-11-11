@@ -6,6 +6,9 @@
     --color-fondo: rgba(221, 180, 45, 0.637);
     --color-borde: rgb(139, 67, 7);
 }
+*{
+    font-family: 'Teko', sans-serif;
+}
 .hide{
 display: none;
 }
@@ -34,8 +37,18 @@ main{
 }
 .playingRecord{
     width: 20%;
-    background-color:  var(--color-fondo);
+    background-size: cover;
+    background-repeat: no-repeat;
+  background-image: url(https://i.ytimg.com/vi/S5IZCmW2M2o/maxresdefault.jpg);
     margin: 5% 5% 5% 2.5%;
+}
+li{
+    list-style: none;
+    color:white;
+    box-sizing: border-box;
+    border: 2px solid rgb(63, 61, 61);
+    text-align: center;
+    padding:10px 0 10px 5px;
 }
 .UserRegistration{
     display: grid;
