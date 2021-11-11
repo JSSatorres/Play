@@ -103,6 +103,10 @@ li{
     background-color: #0013ba;
     color:white;
 }
+li{
+    list-style: none;
+    padding: 3px;
+}
 .divPauseShow{
     width:50%;
     height: 50%;

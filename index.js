@@ -33,6 +33,7 @@ btnRestar.addEventListener("click",restart)
 
 function userName(){
     var name = inputValue.value;
+    var score = gameTime;
     HISTORIC=[];
     createUser(name);
     if(inputValue.value=="")
